@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Website</title>
+</head>
+<body>
+    <h1>Welcome to the AI Website</h1>
+    <p>Click the button to get an AI response:</p>
+    <button onclick="getAIResponse()">Get AI Response</button>
+    <p id="aiResponse"></p>
+
+    <script>
+        function getAIResponse() {
+            fetch('/api/ai') // Make an API request to the backend
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('aiResponse').innerText = data; // Display AI response on the web page
+                });
+        }
+    </script>
+</body>
+</html>
